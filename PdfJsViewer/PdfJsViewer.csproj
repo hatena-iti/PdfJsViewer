@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38B6D0A8-0A41-40AC-A5C0-2C916C4BF749}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PdfJsViewer</RootNamespace>
+    <AssemblyName>PdfJsViewer</AssemblyName>
+    <DefaultLanguage>ja-JP</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>PdfJsViewer_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\LayoutAwarePage.cs" />
+    <Compile Include="HttpServer\HttpServer.cs" />
+    <Compile Include="Pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PdfPage.xaml.cs">
+      <DependentUpon>PdfPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="Assets\web\compressed.tracemonkey-pldi-09.pdf" />
+    <Content Include="Assets\mysample.pdf" />
+    <Content Include="Assets\web\images\toolbarButton-eraser-selected.png" />
+    <Content Include="Assets\web\images\toolbarButton-eraser.png" />
+    <Content Include="Assets\web\images\toolbarButton-pencil-selected.png" />
+    <Content Include="Assets\web\images\toolbarButton-pencil.png" />
+    <Content Include="Assets\web\locale\ar\viewer.properties" />
+    <Content Include="Assets\web\locale\ca\viewer.properties" />
+    <Content Include="Assets\web\locale\cs\viewer.properties" />
+    <Content Include="Assets\web\locale\da\viewer.properties" />
+    <Content Include="Assets\web\locale\de\viewer.properties" />
+    <Content Include="Assets\web\locale\en-US\viewer.properties" />
+    <Content Include="Assets\web\locale\es-MX\viewer.properties" />
+    <Content Include="Assets\web\locale\es\viewer.properties" />
+    <Content Include="Assets\web\locale\fi\viewer.properties" />
+    <Content Include="Assets\web\locale\fr\viewer.properties" />
+    <Content Include="Assets\web\locale\he\viewer.properties" />
+    <Content Include="Assets\web\locale\it\viewer.properties" />
+    <Content Include="Assets\web\locale\ja\viewer.properties" />
+    <Content Include="Assets\web\locale\locale.properties" />
+    <Content Include="Assets\web\locale\lt\viewer.properties" />
+    <Content Include="Assets\web\locale\nl\viewer.properties" />
+    <Content Include="Assets\web\locale\pl\viewer.properties" />
+    <Content Include="Assets\web\locale\pt-BR\viewer.properties" />
+    <Content Include="Assets\web\locale\ro\viewer.properties" />
+    <Content Include="Assets\web\locale\ru\viewer.properties" />
+    <Content Include="Assets\web\locale\sr\viewer.properties" />
+    <Content Include="Assets\web\locale\sv\viewer.properties" />
+    <Content Include="Assets\web\locale\tr\viewer.properties" />
+    <Content Include="Assets\web\locale\zh-CN\viewer.properties" />
+    <Content Include="Assets\web\locale\zh-TW\viewer.properties" />
+    <Page Include="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PdfPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <None Include="PdfJsViewer_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\web\compatibility.js" />
+    <Content Include="Assets\web\debugger.js" />
+    <Content Include="Assets\web\images\annotation-check.svg" />
+    <Content Include="Assets\web\images\annotation-comment.svg" />
+    <Content Include="Assets\web\images\annotation-help.svg" />
+    <Content Include="Assets\web\images\annotation-insert.svg" />
+    <Content Include="Assets\web\images\annotation-key.svg" />
+    <Content Include="Assets\web\images\annotation-newparagraph.svg" />
+    <Content Include="Assets\web\images\annotation-note.svg" />
+    <Content Include="Assets\web\images\annotation-paragraph.svg" />
+    <Content Include="Assets\web\images\findbarButton-next-rtl.png" />
+    <Content Include="Assets\web\images\findbarButton-next.png" />
+    <Content Include="Assets\web\images\findbarButton-previous-rtl.png" />
+    <Content Include="Assets\web\images\findbarButton-previous.png" />
+    <Content Include="Assets\web\images\loading-icon.gif" />
+    <Content Include="Assets\web\images\loading-small.png" />
+    <Content Include="Assets\web\images\shadow.png" />
+    <Content Include="Assets\web\images\texture.png" />
+    <Content Include="Assets\web\images\toolbarButton-bookmark.png" />
+    <Content Include="Assets\web\images\toolbarButton-download.png" />
+    <Content Include="Assets\web\images\toolbarButton-fullscreen.png" />
+    <Content Include="Assets\web\images\toolbarButton-menuArrows.png" />
+    <Content Include="Assets\web\images\toolbarButton-openFile.png" />
+    <Content Include="Assets\web\images\toolbarButton-pageDown-rtl.png" />
+    <Content Include="Assets\web\images\toolbarButton-pageDown.png" />
+    <Content Include="Assets\web\images\toolbarButton-pageUp-rtl.png" />
+    <Content Include="Assets\web\images\toolbarButton-pageUp.png" />
+    <Content Include="Assets\web\images\toolbarButton-print.png" />
+    <Content Include="Assets\web\images\toolbarButton-search.png" />
+    <Content Include="Assets\web\images\toolbarButton-sidebarToggle.png" />
+    <Content Include="Assets\web\images\toolbarButton-viewOutline.png" />
+    <Content Include="Assets\web\images\toolbarButton-viewThumbnail.png" />
+    <Content Include="Assets\web\images\toolbarButton-zoomIn.png" />
+    <Content Include="Assets\web\images\toolbarButton-zoomOut.png" />
+    <Content Include="Assets\web\l10n.js" />
+    <Content Include="Assets\web\pdf.js" />
+    <Content Include="Assets\web\version.txt" />
+    <Content Include="Assets\web\viewer.css" />
+    <Content Include="Assets\web\viewer.html" />
+    <Content Include="Assets\web\viewer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
