@@ -1921,14 +1921,16 @@ var PDFView = {
 
       for (var i = 1, ii = PDFView.pdfDocument.numPages; i <= ii; i++) {
         var canvas = document.getElementById('freeEdit' + i);
-        canvas.className = 'freeEdit-enabled';
+        if (canvas != null) {
+          canvas.className = 'freeEdit-enabled';
 
-        var context = canvas.getContext('2d');
+          var context = canvas.getContext('2d');
 
-        context.globalCompositeOperation = "source-over";
-        context.strokeStyle = '#ff0000';
-        context.lineWidth = 6;
-        context.lineCap = 'round';
+          context.globalCompositeOperation = "source-over";
+          context.strokeStyle = '#ff0000';
+          context.lineWidth = 6;
+          context.lineCap = 'round';
+        }
       }
 
     } else if (this.freeEditMode == 'eraser') {
@@ -1937,14 +1939,16 @@ var PDFView = {
 
       for (var i = 1, ii = PDFView.pdfDocument.numPages; i <= ii; i++) {
         var canvas = document.getElementById('freeEdit' + i);
-        canvas.className = 'freeEdit-enabled';
+        if (canvas != null) {
+          canvas.className = 'freeEdit-enabled';
 
-        var context = canvas.getContext('2d');
+          var context = canvas.getContext('2d');
 
-        context.globalCompositeOperation = "destination-out";
-        context.strokeStyle = "rgba(0,0,0,1)";
-        context.lineWidth = 24;
-        context.lineCap = 'round';
+          context.globalCompositeOperation = "destination-out";
+          context.strokeStyle = "rgba(0,0,0,1)";
+          context.lineWidth = 24;
+          context.lineCap = 'round';
+        }
       }
 
     } else {
@@ -1953,7 +1957,9 @@ var PDFView = {
 
       for (var i = 1, ii = PDFView.pdfDocument.numPages; i <= ii; i++) {
         var canvas = document.getElementById('freeEdit' + i);
-        canvas.className = 'freeEdit';
+        if (canvas != null) {
+          canvas.className = 'freeEdit';
+        }
       }
     }
   }
