@@ -17,6 +17,7 @@
 /*
   Additional modifications for PdfJsViewer project:
     - Changes "pdf.js" path.
+    - Changes default pdf file url.
     - Disables "bookmark" button.
     - Changes "download" button to "save" button.
     - Modifies log function.
@@ -26,7 +27,8 @@
 
 'use strict';
 
-var DEFAULT_URL = 'compressed.tracemonkey-pldi-09.pdf';
+//var DEFAULT_URL = 'compressed.tracemonkey-pldi-09.pdf';
+var DEFAULT_URL = 'mysample.pdf';
 var DEFAULT_SCALE = 'auto';
 var DEFAULT_SCALE_DELTA = 1.1;
 var UNKNOWN_SCALE = 0;

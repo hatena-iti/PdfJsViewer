@@ -120,7 +120,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="Assets\web\compressed.tracemonkey-pldi-09.pdf" />
     <Content Include="Assets\mysample.pdf" />
     <Content Include="Assets\web\images\toolbarButton-eraser-selected.png" />
     <Content Include="Assets\web\images\toolbarButton-eraser.png" />
@@ -159,6 +158,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Content Include="Assets\web\mysample.pdf" />
     <None Include="PdfJsViewer_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
